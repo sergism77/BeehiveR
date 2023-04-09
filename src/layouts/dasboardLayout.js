@@ -1,55 +1,25 @@
 //this is the layout for the dashboard page
-//this layout must be easy to use and easy to understand
-//it must be responsive
-//it must be easy to maintain
-//it must be easy to add new features
-//it must be easy to add new pages
-//it must be easy to add new components
-//it must be easy to add new actions
-//it must be easy to add new reducers
-//it must be easy to add new services
-//it must be easy to add new middlewares
-//it must be easy to add new helpers
-//it must be easy to add new constants
-//it must be easy to add new routes
-//it must be easy to add new layouts
-//it must be easy to add new themes
-//it must be easy to add new styles
-//it must be easy to add new images
-//it must be easy to add new icons
-//it must be easy to add new fonts
-//it must be easy to add new animations
-//it must be easy to add new translations
-//it must be easy to add new languages
-//it must be easy to add new tests
-//it must be easy to add new stories
-//it must be easy to add new snapshots
-//it must be easy to add new configurations
-//it must be easy to add new settings
-//it must be easy to add new environments
-//it must be easy to add new variables
-//it must be easy to add new types
-//it must be easy to add new interfaces
-//it must be easy to add new classes
-//it must be easy to add new functions
 
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userActions } from '../_actions';
 import { Dashboard } from '../../components/pages/Dashboard';
+import { Profile } from '../../components/pages/Profile';
+import { Settings } from '../../components/pages/Settings';
+import { NotFound } from '../../components/pages/NotFound';
+import { Switch, Route } from 'react-router-dom';
+import { ConnectedIntlProvider } from '../../components';
+import { Alert } from '../../components';
+import { PrivateRoute } from '../../components';
+import mariadb from 'mariadb';
+import config from 'config.json';
+const dbConfig = config.database;
+let pool = mariadb.createPool(dbConfig);
 
-//what else should we import in this file?
-//1. we should import the Dashboard component from the components/pages folder
-//2. we should import the userActions from the _actions folder
-//3. we should import the connect function from the react-redux library
-//4. we should import the Link component from the react-router-dom library
+export default pool;
 
-//what should we do in this file?
-//1. we should create a class called DashboardLayout
-//2. we should create a function called mapStateToProps
-//3. we should create a function called connectedDashboardLayout
-//4. we should export the connectedDashboardLayout function
+
 
 class DashboardLayout extends React.Component {
     componentDidMount() {
@@ -102,4 +72,3 @@ function mapStateToProps(state) {
 
 const connectedDashboardLayout = connect(mapStateToProps)(DashboardLayout);
 export { connectedDashboardLayout as DashboardLayout };
-

@@ -1,4 +1,6 @@
 //this is the user.actions.js file in the _actions folder
+//what user actions are missing?
+
 
 import { userConstants } from '../_constants';
 import { userService } from '../_services';
@@ -61,6 +63,98 @@ function register(user) {
     function request(user) { return { type: userConstants.REGISTER_REQUEST, user } }
     function success(user) { return { type: userConstants.REGISTER_SUCCESS, user } }
     function failure(error) { return { type: userConstants.REGISTER_FAILURE, error } }
+}
+
+function forgetPassword(user) {
+    return dispatch => {
+        dispatch(request(user));
+
+        userService.forgetPassword(user)
+            .then(
+                user => { 
+                    dispatch(success());
+                    history.push('/login');
+                    dispatch(alertActions.success('Registration successful'));
+                },
+                error => {
+                    dispatch(failure(error.toString()));
+                    dispatch(alertActions.error(error.toString()));
+                }
+            );
+    };
+
+    function request(user) { return { type: userConstants.FORGET_PASSWORD_REQUEST, user } }
+    function success(user) { return { type: userConstants.FORGET_PASSWORD_SUCCESS, user } }
+    function failure(error) { return { type: userConstants.FORGET_PASSWORD_FAILURE, error } }
+}
+
+function resetPassword(user) {
+    return dispatch => {
+        dispatch(request(user));
+
+        userService.resetPassword(user)
+            .then(
+                user => {
+                    dispatch(success());
+                    history.push('/login');
+                    dispatch(alertActions.success('Registration successful'));
+                },
+                error => {
+                    dispatch(failure(error.toString()));
+                    dispatch(alertActions.error(error.toString()));
+                }
+            );
+    };
+
+    function request(user) { return { type: userConstants.RESET_PASSWORD_REQUEST, user } }
+    function success(user) { return { type: userConstants.RESET_PASSWORD_SUCCESS, user } }
+    function failure(error) { return { type: userConstants.RESET_PASSWORD_FAILURE, error } }
+}
+
+function updatePassword(user) {
+    return dispatch => {
+        dispatch(request(user));
+
+        userService.updatePassword(user)
+            .then(
+                user => {
+                    dispatch(success());
+                    history.push('/login');
+                    dispatch(alertActions.success('Registration successful'));
+                },
+                error => {
+                    dispatch(failure(error.toString()));
+                    dispatch(alertActions.error(error.toString()));
+                }
+            );
+    };
+
+    function request(user) { return { type: userConstants.UPDATE_PASSWORD_REQUEST, user } }
+    function success(user) { return { type: userConstants.UPDATE_PASSWORD_SUCCESS, user } }
+    function failure(error) { return { type: userConstants.UPDATE_PASSWORD_FAILURE, error } }
+}
+
+function updateProfile(user) {
+    return dispatch => {
+        dispatch(request(user));
+
+        userService.updateProfile(user)
+            .then(
+                user => {
+                    dispatch(success());
+                    history.push('/login');
+                    dispatch(alertActions.success('Registration successful'));
+                },
+                error => {
+                    dispatch(failure(error.toString()));
+                    dispatch(alertActions.error(error.toString()));
+                }
+            );
+    };
+
+    function request(user) { return { type: userConstants.UPDATE_PROFILE_REQUEST, user } }
+    function success(user) { return { type: userConstants.UPDATE_PROFILE_SUCCESS, user } }
+    function failure(error) { return { type: userConstants.UPDATE_PROFILE_FAILURE, error } }
 }
 
 function getAll() {

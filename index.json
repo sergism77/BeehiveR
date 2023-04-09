@@ -1,0 +1,26 @@
+//this is the index.json file
+
+{
+
+"version": "1.0.0",
+
+"main": "index.js",
+
+"scripts": {
+
+"start": "node index.js"
+
+},
+
+"dependencies": {
+
+"express": "^4.17.1",
+
+"mongoose": "^5.9.25",
+
+"nodemon": "^2.0.4"
+
+}
+
+}
+

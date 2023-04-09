@@ -1,0 +1,12 @@
+/*what css code goes here?*/
+```
+
+## 2.2.2. CSS Modules
+
+CSS Modules is a CSS file in which all class names and animation names are scoped locally by default. This means that you can use the same CSS class name in different files without worrying about naming conflicts. This is the feature that we will be using in this project.
+
+## 2.2.3. CSS Modules in Create React App
+
+Create React App supports CSS Modules using the `[name].module.css` file naming convention. To enable this feature, rename `index.css` to `index.module.css` and import it from `index.js` instead of `index.css`:
+
+```jsx

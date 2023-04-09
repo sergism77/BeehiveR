@@ -1,0 +1,20 @@
+//this is the index.html file
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to BeehiveR App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h1>{{myWelcome}}</h1>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.myWelcome = "Welcome to BeehiveR App";
+        });
+    </script>
+</body>
+</html>

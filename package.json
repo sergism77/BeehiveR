@@ -1,0 +1,16 @@
+{
+  "name": "beehiver",
+  "version": "1.0.0",
+  "description": "Open source appp for beekeepers",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sergism",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mariadb": "^3.1.1",
+    "socket.io": "^4.6.1"
+  }
+}

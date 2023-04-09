@@ -1,0 +1,11 @@
+//this is the gitignore file
+
+.env
+.DS_Store
+.idea
+.vscode
+.vscode-test
+.nyc_output
+.coverage
+copilot.js
+NEXTstepsTOfollow.js

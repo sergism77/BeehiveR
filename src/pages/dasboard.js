@@ -102,227 +102,152 @@
 //from the dashboard users will be able to navigate to the live messages page
 //from the dashboard users will be able to navigate to the live comments page
 
-
-
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import { getDashboard } from '../actions/dashboardActions';
-import { getApiaries } from '../actions/apiaryActions';
-import { getBeehives } from '../actions/beehiveActions';
-import { getHoney } from '../actions/honeyActions';
-import { getEquipment } from '../actions/equipmentActions';
-import { getSensors } from '../actions/sensorActions';
-import { getWeather } from '../actions/weatherActions';
-import { getLiveFeed } from '../actions/liveFeedActions';
-import { getLiveData } from '../actions/liveDataActions';
-import { getLiveCharts } from '../actions/liveChartsActions';
-import { getLiveGraphs } from '../actions/liveGraphsActions';
-import { getLiveTables } from '../actions/liveTablesActions';
-import { getLiveNotifications } from '../actions/liveNotificationsActions';
-import { getLiveMessages } from '../actions/liveMessagesActions';
-import { getLiveComments } from '../actions/liveCommentsActions';
-import { getLiveQuestions } from '../actions/liveQuestionsActions';
-import { getLiveAnswers } from '../actions/liveAnswersActions';
-import { getLiveEvents } from '../actions/liveEventsActions';
-import { getLiveTasks } from '../actions/liveTasksActions';
-import { getLiveProjects } from '../actions/liveProjectsActions';
-import { getLiveJobs } from '../actions/liveJobsActions';
-import { getLiveOpportunities } from '../actions/liveOpportunitiesActions';
-import { getLiveFriends } from '../actions/liveFriendsActions';
-import { getLiveFollowers } from '../actions/liveFollowersActions';
-import { getLiveConnections } from '../actions/liveConnectionsActions';
-import { getLiveContacts } from '../actions/liveContactsActions';
-import { getLivePeople } from '../actions/livePeopleActions';
-import { getLiveApiaries } from '../actions/liveApiariesActions';
-import { getLiveBeehives } from '../actions/liveBeehivesActions';
-import { getLiveHoney } from '../actions/liveHoneyActions';
-import { getLiveEquipment } from '../actions/liveEquipmentActions';
-import { getLiveSensors } from '../actions/liveSensorsActions';
-import { getLiveWeather } from '../actions/liveWeatherActions';
-import { getLiveWeatherData } from '../actions/liveWeatherDataActions';
-import { getLiveWeatherForecasts } from '../actions/liveWeatherForecastsActions';
-import { getLiveWeatherAlerts } from '../actions/liveWeatherAlertsActions';
-import { getLiveWeatherWarnings } from '../actions/liveWeatherWarningsActions';
-import { getLiveWeatherAdvisories } from '../actions/liveWeatherAdvisoriesActions';
-import { getLiveHoneySales } from '../actions/liveHoneySalesActions';
-import { getLivePurchasedMaterial } from '../actions/livePurchasedMaterialActions';
-import { getLiveBeekeepingExpenses } from '../actions/liveBeekeepingExpensesActions';
-import { getLiveBeekeepingIncome } from '../actions/liveBeekeepingIncomeActions';
-import { getLiveBeekeepingProfit } from '../actions/liveBeekeepingProfitActions';
-import { getLiveBeekeepingLoss } from '../actions/liveBeekeepingLossActions';
-import { getLiveBeekeepingDebt } from '../actions/liveBeekeepingDebtActions';
-import { getSettings } from '../actions/settingsActions';
-import { getProfile } from '../actions/profileActions';
-import { getApiaries } from '../actions/apiaryActions';
-import { getBeehives } from '../actions/beehiveActions';
-import { getHoney } from '../actions/honeyActions';
-import { getEquipment } from '../actions/equipmentActions';
-import { getSensors } from '../actions/sensorActions';
-import { getWeather } from '../actions/weatherActions';
-import { getLiveFeed } from '../actions/liveFeedActions';
-import { getLiveData } from '../actions/liveDataActions';
-import { getLiveCharts } from '../actions/liveChartsActions';
-import { getLiveGraphs } from '../actions/liveGraphsActions';
-import { getLiveTables } from '../actions/liveTablesActions';
-import { getLiveNotifications } from '../actions/liveNotificationsActions';
-import { getLiveMessages } from '../actions/liveMessagesActions';
-import { getLiveComments } from '../actions/liveCommentsActions';
-import { getLiveQuestions } from '../actions/liveQuestionsActions';
-import { getLiveAnswers } from '../actions/liveAnswersActions';
-import { getLiveEvents } from '../actions/liveEventsActions';
-import { getLiveTasks } from '../actions/liveTasksActions';
-import { getLiveProjects } from '../actions/liveProjectsActions';
-import { getLiveJobs } from '../actions/liveJobsActions';
-import { getLiveOpportunities } from '../actions/liveOpportunitiesActions';
-import { getLiveFriends } from '../actions/liveFriendsActions';
-import { getLiveFollowers } from '../actions/liveFollowersActions';
-import { getLiveConnections } from '../actions/liveConnectionsActions';
-import { getLiveContacts } from '../actions/liveContactsActions';
-import { getLivePeople } from '../actions/livePeopleActions';
-import { getLiveApiaries } from '../actions/liveApiariesActions';
-import { getLiveBeehives } from '../actions/liveBeehivesActions';
-import { getLiveHoney } from '../actions/liveHoneyActions';
-import { getLiveEquipment } from '../actions/liveEquipmentActions';
-import { getLiveSensors } from '../actions/liveSensorsActions';
-import { getLiveWeather } from '../actions/liveWeatherActions';
-import { getLiveWeatherData } from '../actions/liveWeatherDataActions';
-import { getLiveWeatherForecasts } from '../actions/liveWeatherForecastsActions';
-import { getLiveWeatherAlerts } from '../actions/liveWeatherAlertsActions';
-import { getLiveWeatherWarnings } from '../actions/liveWeatherWarningsActions';
-import { getLiveWeatherAdvisories } from '../actions/liveWeatherAdvisoriesActions';
-import { getLiveHoneySales } from '../actions/liveHoneySalesActions';
-import { getLivePurchasedMaterial } from '../actions/livePurchasedMaterialActions';
-
-import { getLiveBeekeepingExpenses } from '../actions/liveBeekeepingExpensesActions';
-import { getLiveBeekeepingIncome } from '../actions/liveBeekeepingIncomeActions';
-import { getLiveBeekeepingProfit } from '../actions/liveBeekeepingProfitActions';
-import { getLiveBeekeepingLoss } from '../actions/liveBeekeepingLossActions';
-import { getLiveBeekeepingDebt } from '../actions/liveBeekeepingDebtActions';
-import { getSettings } from '../actions/settingsActions';
-import { getProfile } from '../actions/profileActions';
+import {getDashboard} from '../actions/dashboardActions';
+import {getSettings} from '../actions/settingsActions';
+import {getProfile} from '../actions/profileActions';
+import { getFeed } from '../../redux/actions/feedActions';
+import { getData } from '../../redux/actions/dataActions';
+import { getCharts } from '../../redux/actions/chartsActions';
+import { getGraphs } from '../../redux/actions/graphsActions';
+import { getTables } from '../../redux/actions/tablesActions';
+import { getNotifications } from '../../redux/actions/notificationsActions';
+import { getMessages } from '../../redux/actions/messagesActions';
+import { getComments } from '../../redux/actions/commentsActions';
+import { getQuestions } from '../../redux/actions/questionsActions';
+import { getAnswers } from '../../redux/actions/answersActions';
+import { getEvents } from '../../redux/actions/eventsActions';
+import { getTasks } from '../../redux/actions/tasksActions';
+import { getProjects } from '../../redux/actions/projectsActions';
+import { getJobs } from '../../redux/actions/jobsActions';
+import { getOpportunities } from '../../redux/actions/opportunitiesActions';
+import { getFriends } from '../../redux/actions/friendsActions';
+import { getFollowers } from '../../redux/actions/followersActions';
+import { getConnections } from '../../redux/actions/connectionsActions';
+import { getContacts } from '../../redux/actions/contactsActions';
+import { getPeople } from '../../redux/actions/peopleActions';
+import { getApiaries } from '../../redux/actions/apiariesActions';
+import { getBeehives } from '../../redux/actions/beehivesActions';
+import { getHoney } from '../../redux/actions/honeyActions';
+import { getEquipment } from '../../redux/actions/equipmentActions';
+import { getSensors } from '../../redux/actions/sensorsActions';
+import { getWeather } from '../../redux/actions/weatherActions';
+import { getHoneySales } from '../../redux/actions/honeySalesActions';
+import { getPurchasedMaterial } from '../../redux/actions/purchasedMaterialActions';
+import { getBeekeepingExpenses } from '../../redux/actions/beekeepingExpensesActions';
+import { getBeekeepingIncome } from '../../redux/actions/beekeepingIncomeActions';
+import { getBeekeepingProfit } from '../../redux/actions/beekeepingProfitActions';
+import { getBeekeepingLoss } from '../../redux/actions/beekeepingLossActions';
+import { getBeekeepingDebt } from '../../redux/actions/beekeepingDebtActions';
+import { getSettings } from '../../redux/actions/settingsActions';
+import { getProfile } from '../../redux/actions/profileActions';
+import { getLiveFeed } from '../../redux/actions/liveFeedActions';
+import { getLiveData } from '../../redux/actions/liveDataActions';
+import { getLiveCharts } from '../../redux/actions/liveChartsActions';
+import { getLiveGraphs } from '../../redux/actions/liveGraphsActions';
+import { getLiveTables } from '../../redux/actions/liveTablesActions';
+import { getLiveNotifications } from '../../redux/actions/liveNotificationsActions';
+import { getLiveMessages } from '../../redux/actions/liveMessagesActions';
+import { getLiveComments } from '../../redux/actions/liveCommentsActions';
+import { getLiveQuestions } from '../../redux/actions/liveQuestionsActions';
+import { getLiveAnswers } from '../../redux/actions/liveAnswersActions';
+import { getLiveEvents } from '../../redux/actions/liveEventsActions';
+import { getLiveTasks } from '../../redux/actions/liveTasksActions';
+import { getLiveProjects } from '../../redux/actions/liveProjectsActions';
+import { getLiveJobs } from '../../redux/actions/liveJobsActions';
+import { getLiveOpportunities } from '../../redux/actions/liveOpportunitiesActions';
+import { getLiveFriends } from '../../redux/actions/liveFriendsActions';
+import { getLiveFollowers } from '../../redux/actions/liveFollowersActions';
+import { getLiveConnections } from '../../redux/actions/liveConnectionsActions';
+import { getLiveContacts } from '../../redux/actions/liveContactsActions';
+import { getLivePeople } from '../../redux/actions/livePeopleActions';
+import { getLiveApiaries } from '../../redux/actions/liveApiariesActions';
+import { getLiveBeehives } from '../../redux/actions/liveBeehivesActions';
+import { getLiveHoney } from '../../redux/actions/liveHoneyActions';
+import { getLiveEquipment } from '../../redux/actions/liveEquipmentActions';
+import { getLiveSensors } from '../../redux/actions/liveSensorsActions';
+import { getLiveWeather } from '../../redux/actions/liveWeatherActions';
+import { getLiveHoneySales } from '../../redux/actions/liveHoneySalesActions';
+import { getLivePurchasedMaterial } from '../../redux/actions/livePurchasedMaterialActions';
+import { getLiveBeekeepingExpenses } from '../../redux/actions/liveBeekeepingExpensesActions';
+import { getLiveBeekeepingIncome } from '../../redux/actions/liveBeekeepingIncomeActions';
+import { getLiveBeekeepingProfit } from '../../redux/actions/liveBeekeepingProfitActions';
+import { getLiveBeekeepingLoss } from '../../redux/actions/liveBeekeepingLossActions';
+import { getLiveBeekeepingDebt } from '../../redux/actions/liveBeekeepingDebtActions';
+import { getLiveSettings } from '../../redux/actions/liveSettingsActions';
+import { getLiveProfile } from '../../redux/actions/liveProfileActions';
+import { getLiveWeatherAdvisories } from '../../redux/actions/liveWeatherAdvisoriesActions';
+import { getLiveWeatherWarnings } from '../../redux/actions/liveWeatherWarningsActions';
+import { getLiveWeatherWatch } from '../../redux/actions/liveWeatherWatchActions';
+import { getLiveWeatherForecast } from '../../redux/actions/liveWeatherForecastActions';
+import { getLiveWeatherCurrent } from '../../redux/actions/liveWeatherCurrentActions';
+import { getLiveWeatherHourly } from '../../redux/actions/liveWeatherHourlyActions';
+import { getLiveWeatherDaily } from '../../redux/actions/liveWeatherDailyActions';
+import { getLiveWeatherAlerts } from '../../redux/actions/liveWeatherAlertsActions';
+import { getLiveWeatherAlertsActive } from '../../redux/actions/liveWeatherAlertsActiveActions';
+import { getLiveWeatherAlertsExpired } from '../../redux/actions/liveWeatherAlertsExpiredActions';
+import { getLiveWeatherAlertsUpcoming } from '../../redux/actions/liveWeatherAlertsUpcomingActions';
+import { getLiveWeatherAlertsToday } from '../../redux/actions/liveWeatherAlertsTodayActions';
+import { getLiveWeatherAlertsTomorrow } from '../../redux/actions/liveWeatherAlertsTomorrowActions';
+import { getLiveWeatherAlertsThisWeek } from '../../redux/actions/liveWeatherAlertsThisWeekActions';
+import { getLiveWeatherAlertsThisWeekend } from '../../redux/actions/liveWeatherAlertsThisWeekendActions';
+import { getLiveWeatherAlertsThisMonth } from '../../redux/actions/liveWeatherAlertsThisMonthActions';
 
 
 const mapStateToProps = state => ({
-    dashboard: state.dashboard,
-    feed: state.feed,
-    data: state.data,
-    charts: state.charts,
-    graphs: state.graphs,
-    tables: state.tables,
-    notifications: state.notifications,
-    messages: state.messages,
-    comments: state.comments,
-    questions: state.questions,
-    answers: state.answers,
-    events: state.events,
-    tasks: state.tasks,
-    projects: state.projects,
-    jobs: state.jobs,
-    opportunities: state.opportunities,
-    friends: state.friends,
-    followers: state.followers,
-    connections: state.connections,
-    contacts: state.contacts,
-    people: state.people,
-    apiaries: state.apiaries,
-    beehives: state.beehives,
-    honey: state.honey,
-    equipment: state.equipment,
-    sensors: state.sensors,
-    weather: state.weather,
-    honeySales: state.honeySales,
-    purchasedMaterial: state.purchasedMaterial,
-    beekeepingExpenses: state.beekeepingExpenses,
-    beekeepingIncome: state.beekeepingIncome,
-    beekeepingProfit: state.beekeepingProfit,
-    beekeepingLoss: state.beekeepingLoss,
-    beekeepingDebt: state.beekeepingDebt,
-    settings: state.settings,
-    profile: state.profile,
-    liveFeed: state.liveFeed,
-    liveData: state.liveData,
-    liveCharts: state.liveCharts,
-    liveGraphs: state.liveGraphs,
-    liveTables: state.liveTables,
-    liveNotifications: state.liveNotifications,
-    liveMessages: state.liveMessages,
-    liveComments: state.liveComments,
-    liveQuestions: state.liveQuestions,
-    liveAnswers: state.liveAnswers,
-    liveEvents: state.liveEvents,
-    liveTasks: state.liveTasks,
-    liveProjects: state.liveProjects,
-    liveJobs: state.liveJobs,
-    liveOpportunities: state.liveOpportunities,
-    liveFriends: state.liveFriends,
-    liveFollowers: state.liveFollowers,
-    liveConnections: state.liveConnections,
-    liveContacts: state.liveContacts,
-    livePeople: state.livePeople,
-    liveApiaries: state.liveApiaries,
-    liveBeehives: state.liveBeehives,
-    liveHoney: state.liveHoney,
-    liveEquipment: state.liveEquipment,
-    liveSensors: state.liveSensors,
-    liveWeather: state.liveWeather,
-    liveWeatherData: state.liveWeatherData,
-    liveWeatherForecasts: state.liveWeatherForecasts,
-    liveWeatherAlerts: state.liveWeatherAlerts,
-    liveWeatherWarnings: state.liveWeatherWarnings,
-    liveWeatherAdvisories: state.liveWeatherAdvisories,
-    liveHoneySales: state.liveHoneySales,
-    livePurchasedMaterial: state.livePurchasedMaterial,
-    liveBeekeepingExpenses: state.liveBeekeepingExpenses,
-    liveBeekeepingIncome: state.liveBeekeepingIncome,
-    liveBeekeepingProfit: state.liveBeekeepingProfit,
-    liveBeekeepingLoss: state.liveBeekeepingLoss,
-    liveBeekeepingDebt: state.liveBeekeepingDebt,
+    notifications: state.notifications.notifications,
+    messages: state.messages.messages,
+    comments: state.comments.comments,
+    questions: state.questions.questions,
+    answers: state.answers.answers,
+    events: state.events.events,
+    tasks: state.tasks.tasks,
+    projects: state.projects.projects,
+    jobs: state.jobs.jobs,
+    opportunities: state.opportunities.opportunities,
+    friends: state.friends.friends,
+    followers: state.followers.followers,
+    connections: state.connections.connections,
+    contacts: state.contacts.contacts,
+    people: state.people.people,
+    apiaries: state.apiaries.apiaries,
+    beehives: state.beehives.beehives,
+    honey: state.honey.honey,
+    equipment: state.equipment.equipment,
+    sensors: state.sensors.sensors,
+    weather: state.weather.weather,
+    honeySales: state.honeySales.honeySales,
+    purchasedMaterial: state.purchasedMaterial.purchasedMaterial,
+    beekeepingExpenses: state.beekeepingExpenses.beekeepingExpenses,
+    beekeepingIncome: state.beekeepingIncome.beekeepingIncome,
+    beekeepingProfit: state.beekeepingProfit.beekeepingProfit,
+    beekeepingLoss: state.beekeepingLoss.beekeepingLoss,
+    beekeepingDebt: state.beekeepingDebt.beekeepingDebt,
+    settings: state.settings.settings,
+    profile: state.profile.profile,
+    weatherAdvisories: state.weatherAdvisories.weatherAdvisories,
+    weatherWarnings: state.weatherWarnings.weatherWarnings,
+    weatherWatch: state.weatherWatch.weatherWatch,
+    weatherForecast: state.weatherForecast.weatherForecast,
+    weatherCurrent: state.weatherCurrent.weatherCurrent,
+    weatherHourly: state.weatherHourly.weatherHourly,
+    weatherDaily: state.weatherDaily.weatherDaily,
+    weatherAlerts: state.weatherAlerts.weatherAlerts,
+    weatherAlertsActive: state.weatherAlertsActive.weatherAlertsActive,
+    weatherAlertsExpired: state.weatherAlertsExpired.weatherAlertsExpired,
+    weatherAlertsUpcoming: state.weatherAlertsUpcoming.weatherAlertsUpcoming,
+    weatherAlertsToday: state.weatherAlertsToday.weatherAlertsToday,
+    weatherAlertsTomorrow: state.weatherAlertsTomorrow.weatherAlertsTomorrow,
+    weatherAlertsThisWeek: state.weatherAlertsThisWeek.weatherAlertsThisWeek,
+    weatherAlertsThisWeekend: state.weatherAlertsThisWeekend.weatherAlertsThisWeekend,
+    weatherAlertsThisMonth: state.weatherAlertsThisMonth.weatherAlertsThisMonth,
 });
 
 const mapDispatchToProps = dispatch => ({
-    getFeed: () => dispatch(getFeed()),
-    getData: () => dispatch(getData()),
-    getCharts: () => dispatch(getCharts()),
-    getGraphs: () => dispatch(getGraphs()),
-    getTables: () => dispatch(getTables()),
-    getNotifications: () => dispatch(getNotifications()),
-    getMessages: () => dispatch(getMessages()),
-    getComments: () => dispatch(getComments()),
-    getQuestions: () => dispatch(getQuestions()),
-    getAnswers: () => dispatch(getAnswers()),
-    getEvents: () => dispatch(getEvents()),
-    getTasks: () => dispatch(getTasks()),
-    getProjects: () => dispatch(getProjects()),
-    getJobs: () => dispatch(getJobs()),
-    getOpportunities: () => dispatch(getOpportunities()),
-    getFriends: () => dispatch(getFriends()),
-    getFollowers: () => dispatch(getFollowers()),
-    getConnections: () => dispatch(getConnections()),
-    getContacts: () => dispatch(getContacts()),
-    getPeople: () => dispatch(getPeople()),
-    getApiaries: () => dispatch(getApiaries()),
-    getBeehives: () => dispatch(getBeehives()),
-    getHoney: () => dispatch(getHoney()),
-    getEquipment: () => dispatch(getEquipment()),
-    getSensors: () => dispatch(getSensors()),
-    getWeather: () => dispatch(getWeather()),
-    getHoneySales: () => dispatch(getHoneySales()),
-    getPurchasedMaterial: () => dispatch(getPurchasedMaterial()),
-    getBeekeepingExpenses: () => dispatch(getBeekeepingExpenses()),
-    getBeekeepingIncome: () => dispatch(getBeekeepingIncome()),
-    getBeekeepingProfit: () => dispatch(getBeekeepingProfit()),
-    getBeekeepingLoss: () => dispatch(getBeekeepingLoss()),
-    getBeekeepingDebt: () => dispatch(getBeekeepingDebt()),
-    getSettings: () => dispatch(getSettings()),
-    getProfile: () => dispatch(getProfile()),
-    getLiveFeed: () => dispatch(getLiveFeed()),
-    getLiveData: () => dispatch(getLiveData()),
-    getLiveCharts: () => dispatch(getLiveCharts()),
-    getLiveGraphs: () => dispatch(getLiveGraphs()),
-    getLiveTables: () => dispatch(getLiveTables()),
     getLiveNotifications: () => dispatch(getLiveNotifications()),
     getLiveMessages: () => dispatch(getLiveMessages()),
     getLiveComments: () => dispatch(getLiveComments()),
@@ -344,11 +269,6 @@ const mapDispatchToProps = dispatch => ({
     getLiveEquipment: () => dispatch(getLiveEquipment()),
     getLiveSensors: () => dispatch(getLiveSensors()),
     getLiveWeather: () => dispatch(getLiveWeather()),
-    getLiveWeatherData: () => dispatch(getLiveWeatherData()),
-    getLiveWeatherForecasts: () => dispatch(getLiveWeatherForecasts()),
-    getLiveWeatherAlerts: () => dispatch(getLiveWeatherAlerts()),
-    getLiveWeatherWarnings: () => dispatch(getLiveWeatherWarnings()),
-    getLiveWeatherAdvisories: () => dispatch(getLiveWeatherAdvisories()),
     getLiveHoneySales: () => dispatch(getLiveHoneySales()),
     getLivePurchasedMaterial: () => dispatch(getLivePurchasedMaterial()),
     getLiveBeekeepingExpenses: () => dispatch(getLiveBeekeepingExpenses()),
@@ -356,7 +276,24 @@ const mapDispatchToProps = dispatch => ({
     getLiveBeekeepingProfit: () => dispatch(getLiveBeekeepingProfit()),
     getLiveBeekeepingLoss: () => dispatch(getLiveBeekeepingLoss()),
     getLiveBeekeepingDebt: () => dispatch(getLiveBeekeepingDebt()),
+    getLiveSettings: () => dispatch(getLiveSettings()),
+    getLiveProfile: () => dispatch(getLiveProfile()),
+    getLiveWeatherAdvisories: () => dispatch(getLiveWeatherAdvisories()),
+    getLiveWeatherWarnings: () => dispatch(getLiveWeatherWarnings()),
+    getLiveWeatherWatch: () => dispatch(getLiveWeatherWatch()),
+    getLiveWeatherForecast: () => dispatch(getLiveWeatherForecast()),
+    getLiveWeatherCurrent: () => dispatch(getLiveWeatherCurrent()),
+    getLiveWeatherHourly: () => dispatch(getLiveWeatherHourly()),
+    getLiveWeatherDaily: () => dispatch(getLiveWeatherDaily()),
+    getLiveWeatherAlerts: () => dispatch(getLiveWeatherAlerts()),
+    getLiveWeatherAlertsActive: () => dispatch(getLiveWeatherAlertsActive()),
+    getLiveWeatherAlertsExpired: () => dispatch(getLiveWeatherAlertsExpired()),
+    getLiveWeatherAlertsUpcoming: () => dispatch(getLiveWeatherAlertsUpcoming()),
+    getLiveWeatherAlertsToday: () => dispatch(getLiveWeatherAlertsToday()),
+    getLiveWeatherAlertsTomorrow: () => dispatch(getLiveWeatherAlertsTomorrow()),
+    getLiveWeatherAlertsThisWeek: () => dispatch(getLiveWeatherAlertsThisWeek()),
+    getLiveWeatherAlertsThisWeekend: () => dispatch(getLiveWeatherAlertsThisWeekend()),
+    getLiveWeatherAlertsThisMonth: () => dispatch(getLiveWeatherAlertsThisMonth()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
-
+export default connect(mapStateToProps, mapDispatchToProps)(LiveWeatherAlertsThisWeekend);

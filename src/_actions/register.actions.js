@@ -1,7 +1,9 @@
-//this is the user.constants.js file in the _constants folder
-
-
+//this is the register.actions.js file in the _actions folder
+//what do we need to import here?
 import { userConstants } from '../_constants';
+import { userService } from '../_services';
+import { alertActions } from './';
+import { history } from '../_helpers';
 
 export const userActions = {
     login,
@@ -78,24 +80,6 @@ function getAll() {
 }
 
 // prefixed function name with underscore because delete is a reserved word in javascript
-
-
-export const userConstants = {
-    LOGIN_REQUEST: 'USERS_LOGIN_REQUEST',
-    LOGIN_SUCCESS: 'USERS_LOGIN_SUCCESS',
-    LOGIN_FAILURE: 'USERS_LOGIN_FAILURE',
-    LOGOUT: 'USERS_LOGOUT',
-    REGISTER_REQUEST: 'USERS_REGISTER_REQUEST',
-    REGISTER_SUCCESS: 'USERS_REGISTER_SUCCESS',
-    REGISTER_FAILURE: 'USERS_REGISTER_FAILURE',
-    GETALL_REQUEST: 'USERS_GETALL_REQUEST',
-    GETALL_SUCCESS: 'USERS_GETALL_SUCCESS',
-    GETALL_FAILURE: 'USERS_GETALL_FAILURE',
-    DELETE_REQUEST: 'USERS_DELETE_REQUEST',
-    DELETE_SUCCESS: 'USERS_DELETE_SUCCESS',
-    DELETE_FAILURE: 'USERS_DELETE_FAILURE'
-};
-
 function _delete(id) {
     return dispatch => {
         dispatch(request(id));
@@ -111,5 +95,3 @@ function _delete(id) {
     function success(id) { return { type: userConstants.DELETE_SUCCESS, id } }
     function failure(id, error) { return { type: userConstants.DELETE_FAILURE, id, error } }
 }
-
-

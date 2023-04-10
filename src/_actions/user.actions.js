@@ -1,5 +1,4 @@
 //this is the user.actions.js file in the _actions folder
-//what user actions are missing?
 
 
 import { userConstants } from '../_constants';

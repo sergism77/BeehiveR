@@ -1,11 +1,12 @@
-//this is the profile.js file in the routes folder
+//this is the home.js file in the routes folder
 
 import React from 'react';
-import { connect } from 'react-redux';
-import { userActions } from '../_actions';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-class ProfilePage extends React.Component {
+import { userActions } from '../_actions';
+
+class HomePage extends React.Component {
     componentDidMount() {
         this.props.getUsers();
     }
@@ -56,6 +57,6 @@ const actionCreators = {
     deleteUser: userActions.delete
 }
 
-const connectedProfilePage = connect(mapState, actionCreators)(ProfilePage);
-export { connectedProfilePage as ProfilePage };
+const connectedHomePage = connect(mapState, actionCreators)(HomePage);
+export { connectedHomePage as HomePage };
 

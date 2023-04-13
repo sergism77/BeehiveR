@@ -1,9 +1,9 @@
 //this is the index.js in the _helpers folder
 
-import { authHeader } from '../_helpers';
-import { history } from '../_helpers';
-import { userService } from '../_services';
-import { userConstants } from '../_constants/index.constants';
+import { authHeader } from '.';
+import { history } from '.';
+import { userService } from '../services';
+import { userConstants } from '../constants/index.constants';
 
 export const userActions = {
     login,

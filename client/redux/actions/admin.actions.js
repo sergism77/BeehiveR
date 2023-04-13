@@ -1,9 +1,9 @@
 //this is the admin.actions.js file in the _actions folder
 
-import { adminConstants } from '../_constants/index.constants';
-import { adminService } from '../_services';
+import { adminConstants } from '../constants/index.constants';
+import { adminService } from '../services';
 import { alertActions } from './index.actions';
-import { history } from '../_helpers';
+import { history } from '../helpers';
 
 export const adminActions = {
     login,

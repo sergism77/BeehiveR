@@ -1,8 +1,8 @@
 //this is the dasboard.service.js file in the services folder
 
 import { dashboardConstants } from '../_constants/index.constants';
-import { dashboardService } from '../_services';
-import { alertActions } from './';
+import { dashboardService } from '.';
+import { alertActions } from '.';
 import { history } from '../_helpers';
 
 export const dashboardActions = {

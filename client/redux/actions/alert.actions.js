@@ -1,7 +1,7 @@
 //this is the alert.actions.js file in the _actions folder
 
-import { alertConstants } from '../_constants/index.constants';
-import { history } from '../_helpers';
+import { alertConstants } from '../constants/index.constants';
+import { history } from '../helpers';
 
 export const alertActions = {
     success,

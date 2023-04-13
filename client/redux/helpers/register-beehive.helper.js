@@ -1,8 +1,8 @@
 //this is the register-beehive.helper.js file in the _helpers folder
 
 import { registerConstants } from '../_constants';
-import { registerService } from '../_services';
-import { alertActions } from './';
+import { registerService } from '../services';
+import { alertActions } from '.';
 
 export const registerActions = {
     register

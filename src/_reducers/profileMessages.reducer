@@ -1,0 +1,12 @@
+//this is the profileMessages.reducer.js file in the reducers folder
+
+const profileMessagesReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_PROFILE_MESSAGES':
+            return action.payload;
+        default:
+            return state;
+    }
+};
+
+export default profileMessagesReducer;

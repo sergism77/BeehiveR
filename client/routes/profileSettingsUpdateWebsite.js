@@ -1,4 +1,5 @@
-//this is the home.js file in the routes folder
+//this is the profileSettingsUpdateWebsite.js file in the routes folder
+//what does this file do? it is a route that is used to update the user's website
 
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -6,7 +7,7 @@ import { connect } from 'react-redux';
 
 import { userActions } from '../_actions';
 
-class HomePage extends React.Component {
+class ProfileSettingsUpdateWebsite extends React.Component {
     componentDidMount() {
         this.props.getUsers();
     }
@@ -57,26 +58,6 @@ const actionCreators = {
     deleteUser: userActions.delete
 }
 
-const connectedHomePage = connect(mapState, actionCreators)(HomePage);
-export { connectedHomePage as HomePage };
-
-
-//what routes are we still missing in the routes folder?
-//we need to add the profileSettingsUpdateAddress.js file to the routes folder
-//we need to add the profileSettingsUpdatePayment.js file to the routes folder
-//we need to add the profileSettingsUpdateBilling.js file to the routes folder
-//we need to add the profileSettingsUpdateShipping.js file to the routes folder
-//we need to add the profileSettingsUpdateSocial.js file to the routes folder
-//we need to add the profileSettingsUpdateBackground.js file to the routes folder
-//we need to add the profileSettingsUpdateTheme.js file to the routes folder
-//we need to add the profileSettingsUpdateCurrency.js file to the routes folder
-//we need to add the profileSettingsUpdateTimezone.js file to the routes folder
-//we need to add the profileSettingsUpdateRegion.js file to the routes folder
-//we need to add the profileSettingsUpdateAbout.js file to the routes folder
-//we need to add the profileSettingsUpdateWebsite.js file to the routes folder
-//we need to add the profileSettingsUpdateFacebook.js file to the routes folder
-//we need to add the profileSettingsUpdateTwitter.js file to the routes folder
-//we need to add the profileSettingsUpdateInstagram.js file to the routes folder
-//we need to add the profileSettingsUpdateLinkedin.js file to the routes folder
-//we need to add the profileSettingsUpdateYoutube.js file to the routes folder
+const connectedProfileSettingsUpdateWebsite = connect(mapState, actionCreators)(ProfileSettingsUpdateWebsite);
+export { connectedProfileSettingsUpdateWebsite as ProfileSettingsUpdateWebsite };
 

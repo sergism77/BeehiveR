@@ -1,7 +1,7 @@
 //this is the error-handler.js file in the middleware folder
 
 import { history } from '../helpers';
-import { alertActions } from '../_actions';
+import { alertActions } from '../redux/_actions';
 import { registerConstants } from '../_constants';
 
 export function errorHandler(error) {

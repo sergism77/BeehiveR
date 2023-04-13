@@ -72,8 +72,6 @@ export { connectedHomePage as HomePage };
 //we need to add the profileSettingsUpdateCurrency.js file to the routes folder
 //we need to add the profileSettingsUpdateTimezone.js file to the routes folder
 //we need to add the profileSettingsUpdateRegion.js file to the routes folder
-//we need to add the profileSettingsUpdateCity.js file to the routes folder
-//we need to add the profileSettingsUpdateZip.js file to the routes folder
 //we need to add the profileSettingsUpdateAbout.js file to the routes folder
 //we need to add the profileSettingsUpdateWebsite.js file to the routes folder
 //we need to add the profileSettingsUpdateFacebook.js file to the routes folder

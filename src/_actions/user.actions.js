@@ -1,9 +1,9 @@
 //this is the user.actions.js file in the _actions folder
 
 
-import { userConstants } from '../_constants';
+import { userConstants } from '../_constants/index.constants';
 import { userService } from '../_services';
-import { alertActions } from './';
+import { alertActions } from './index.actions';
 import { history } from '../_helpers';
 
 export const userActions = {

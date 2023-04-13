@@ -3,7 +3,7 @@
 import { authHeader } from '../_helpers';
 import { history } from '../_helpers';
 import { userService } from '../_services';
-import { userConstants } from '../_constants';
+import { userConstants } from '../_constants/index.constants';
 
 export const userActions = {
     login,

@@ -1,8 +1,8 @@
 //this is the developer.actions.js file in the _actions folder
 
-import { developerConstants } from '../_constants';
+import { developerConstants } from '../_constants/index.constants';
 import { developerService } from '../_services';
-import { alertActions } from './';
+import { alertActions } from './index.actions';
 import { history } from '../_helpers';
 
 export const developerActions = {

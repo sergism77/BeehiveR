@@ -2,6 +2,11 @@
 
 
 import { userConstants } from '../_constants';
+import { userService } from '../_services';
+import { alertActions } from './';
+import { history } from '../_helpers';
+
+
 
 export const userActions = {
     login,
@@ -111,5 +116,7 @@ function _delete(id) {
     function success(id) { return { type: userConstants.DELETE_SUCCESS, id } }
     function failure(id, error) { return { type: userConstants.DELETE_FAILURE, id, error } }
 }
+
+
 
 

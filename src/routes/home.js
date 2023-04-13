@@ -60,3 +60,25 @@ const actionCreators = {
 const connectedHomePage = connect(mapState, actionCreators)(HomePage);
 export { connectedHomePage as HomePage };
 
+
+//what routes are we still missing in the routes folder?
+//we need to add the profileSettingsUpdateAddress.js file to the routes folder
+//we need to add the profileSettingsUpdatePayment.js file to the routes folder
+//we need to add the profileSettingsUpdateBilling.js file to the routes folder
+//we need to add the profileSettingsUpdateShipping.js file to the routes folder
+//we need to add the profileSettingsUpdateSocial.js file to the routes folder
+//we need to add the profileSettingsUpdateBackground.js file to the routes folder
+//we need to add the profileSettingsUpdateTheme.js file to the routes folder
+//we need to add the profileSettingsUpdateCurrency.js file to the routes folder
+//we need to add the profileSettingsUpdateTimezone.js file to the routes folder
+//we need to add the profileSettingsUpdateRegion.js file to the routes folder
+//we need to add the profileSettingsUpdateCity.js file to the routes folder
+//we need to add the profileSettingsUpdateZip.js file to the routes folder
+//we need to add the profileSettingsUpdateAbout.js file to the routes folder
+//we need to add the profileSettingsUpdateWebsite.js file to the routes folder
+//we need to add the profileSettingsUpdateFacebook.js file to the routes folder
+//we need to add the profileSettingsUpdateTwitter.js file to the routes folder
+//we need to add the profileSettingsUpdateInstagram.js file to the routes folder
+//we need to add the profileSettingsUpdateLinkedin.js file to the routes folder
+//we need to add the profileSettingsUpdateYoutube.js file to the routes folder
+

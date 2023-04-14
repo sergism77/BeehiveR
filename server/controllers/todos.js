@@ -55,3 +55,12 @@ export const deleteTodo = (req, res) => {
     });
 }
 
+export const clearCompleted = (req, res) => {
+    console.log('clearCompleted');
+    console.log(req.body);
+    console.log(req.params.id);
+    Todo.remove({ done: true }, (err) => {
+        console.log('clearCompleted');
+        console.log(req.body);
+        console.log(req.params.id);
+        if (err) {

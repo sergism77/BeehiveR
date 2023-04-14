@@ -65,5 +65,3 @@ function renderFullPage(html, preloadedState, helmet, styles) {
         </html>
         `
 }
-
-//2. we need the routes component. We should call it serverRoutes
